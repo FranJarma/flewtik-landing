@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ChefHat, Stethoscope, Scissors, Calculator, Building2, ShoppingBag } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { ChefHat, Stethoscope, Scissors, Calculator, Building2, ShoppingBag } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function IndustriesSection() {
   const industries = [
@@ -48,32 +48,34 @@ export function IndustriesSection() {
       features: ["Chatbot 24/7", "Gestión inventario", "Seguimiento envíos"],
       color: "secondary",
     },
-  ]
+  ];
 
   return (
-    <section id="industrias" className="py-32 relative">
+    <section id="industrias" className="relative py-32">
       {/* Background effect */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="bg-primary/5 absolute top-1/2 left-1/2 size-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <div className="relative z-10 container mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="mb-20 text-center"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="mb-6 text-4xl font-bold lg:text-5xl">
             Automatización por <span className="text-secondary">industria</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Soluciones específicas para cada tipo de negocio</p>
+          <p className="mx-auto max-w-2xl text-xl text-gray-300">
+            Soluciones específicas para cada tipo de negocio
+          </p>
         </motion.div>
 
         {/* Industries Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="mb-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry, index) => (
             <motion.div
               key={industry.title}
@@ -83,24 +85,24 @@ export function IndustriesSection() {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="glass rounded-2xl p-8 h-full hover-lift">
+              <div className="glass hover-lift h-full rounded-2xl p-8">
                 {/* Icon */}
                 <div
-                  className={`size-16 ${industry.color === "primary" ? "bg-primary" : "bg-secondary"} rounded-2xl flex items-center justify-center mb-6 ${industry.color === "primary" ? "glow-purple" : "glow-green"}`}
+                  className={`size-16 ${industry.color === "primary" ? "bg-primary" : "bg-secondary"} mb-6 flex items-center justify-center rounded-2xl ${industry.color === "primary" ? "glow-purple" : "glow-green"}`}
                 >
                   <industry.icon className="size-8 text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-4">{industry.title}</h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">{industry.description}</p>
+                <h3 className="mb-4 text-2xl font-bold text-white">{industry.title}</h3>
+                <p className="mb-6 leading-relaxed text-gray-300">{industry.description}</p>
 
                 {/* Features */}
-                <ul className="space-y-2 mb-6">
+                <ul className="mb-6 space-y-2">
                   {industry.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-gray-300">
                       <div
-                        className={`size-2 ${industry.color === "primary" ? "bg-primary" : "bg-secondary"} rounded-full mr-3`}
+                        className={`size-2 ${industry.color === "primary" ? "bg-primary" : "bg-secondary"} mr-3 rounded-full`}
                       />
                       {feature}
                     </li>
@@ -110,7 +112,7 @@ export function IndustriesSection() {
                 {/* CTA */}
                 <Button
                   variant="outline"
-                  className="w-full border-zinc-700 text-white hover:bg-zinc-900 hover:text-primary transition-all duration-300 bg-transparent"
+                  className="hover:text-primary w-full border-zinc-700 bg-transparent text-white transition-all duration-300 hover:bg-zinc-900"
                 >
                   Ver automatizaciones
                 </Button>
@@ -127,15 +129,17 @@ export function IndustriesSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">¿Tu industria no está listada?</h3>
-            <p className="text-gray-300 mb-6">Creamos automatizaciones personalizadas para cualquier tipo de negocio</p>
-            <Button className="bg-primary hover:bg-primary/90 hover:text-primary text-white font-semibold px-8 animate-glow">
+          <div className="glass mx-auto max-w-2xl rounded-2xl p-8">
+            <h3 className="mb-4 text-2xl font-bold text-white">¿Tu industria no está listada?</h3>
+            <p className="mb-6 text-gray-300">
+              Creamos automatizaciones personalizadas para cualquier tipo de negocio
+            </p>
+            <Button className="bg-primary hover:bg-primary/90 hover:text-primary animate-glow px-8 font-semibold text-white">
               Consultar automatización personalizada
             </Button>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

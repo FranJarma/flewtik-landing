@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -20,7 +22,7 @@ module.exports = {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#22C55E",
+          DEFAULT: "#0077B6", // Nuevo celeste oscuro
           foreground: "hsl(var(--secondary-foreground))",
         },
         destructive: {
@@ -69,6 +71,11 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      // Revertido a la configuración original de la fuente Tektur
+      fontFamily: {
+        tektur: ["var(--font-tektur)", ...defaultTheme.fontFamily.sans],
+        sans: ["var(--font-tektur)", ...defaultTheme.fontFamily.sans], // Asegura que Tektur sea la fuente sans-serif predeterminada
       },
     },
   },

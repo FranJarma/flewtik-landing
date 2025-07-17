@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export function ContactSection() {
   const contactInfo = [
     {
       icon: Mail,
       title: "Email",
-      value: "hola@automatika.com.ar",
-      link: `mailto:hola@automatika.com.ar`,
+      value: "hola@flewtik.com.ar",
+      link: `mailto:hola@flewtik.com.ar`,
     },
     {
       icon: Phone,
@@ -26,27 +26,28 @@ export function ContactSection() {
       value: "Salta Capital, Argentina",
       link: "#",
     },
-  ]
+  ];
 
   return (
-    <section id="contacto" className="py-32 relative">
+    <section id="contacto" className="relative py-32">
       <div className="container mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="mb-20 text-center"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="mb-6 text-4xl font-bold lg:text-5xl">
             Hablemos de tu <span className="text-secondary">proyecto</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Contanos sobre tu negocio y te ayudamos a identificar las mejores oportunidades de automatización
+          <p className="mx-auto max-w-3xl text-xl text-gray-300">
+            Contanos sobre tu negocio y te ayudamos a identificar las mejores oportunidades de
+            automatización
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -55,56 +56,56 @@ export function ContactSection() {
             viewport={{ once: true }}
           >
             <div className="glass rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Envianos un mensaje</h3>
+              <h3 className="mb-6 text-2xl font-bold text-white">Envianos un mensaje</h3>
 
               <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid gap-4 md:grid-cols-2">
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Nombre *</label>
+                    <label className="mb-2 block text-sm font-medium text-gray-300">Nombre *</label>
                     <Input
-                      className="bg-zinc-900/50 border-zinc-700 text-white placeholder:text-gray-500 focus:border-primary"
+                      className="focus:border-primary border-zinc-700 bg-zinc-900/50 text-white placeholder:text-gray-500"
                       placeholder="Tu nombre"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">Empresa</label>
+                    <label className="mb-2 block text-sm font-medium text-gray-300">Empresa</label>
                     <Input
-                      className="bg-zinc-900/50 border-zinc-700 text-white placeholder:text-gray-500 focus:border-primary"
+                      className="focus:border-primary border-zinc-700 bg-zinc-900/50 text-white placeholder:text-gray-500"
                       placeholder="Nombre de tu empresa"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">Email *</label>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">Email *</label>
                   <Input
                     type="email"
-                    className="bg-zinc-900/50 border-zinc-700 text-white placeholder:text-gray-500 focus:border-primary"
+                    className="focus:border-primary border-zinc-700 bg-zinc-900/50 text-white placeholder:text-gray-500"
                     placeholder="tu@email.com"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">WhatsApp</label>
+                  <label className="mb-2 block text-sm font-medium text-gray-300">WhatsApp</label>
                   <Input
-                    className="bg-zinc-900/50 border-zinc-700 text-white placeholder:text-gray-500 focus:border-primary"
+                    className="focus:border-primary border-zinc-700 bg-zinc-900/50 text-white placeholder:text-gray-500"
                     placeholder="+54 387 123-4567"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label className="mb-2 block text-sm font-medium text-gray-300">
                     ¿Qué proceso querés automatizar? *
                   </label>
                   <Textarea
-                    className="bg-zinc-900/50 border-zinc-700 text-white placeholder:text-gray-500 min-h-[120px] focus:border-primary"
+                    className="focus:border-primary min-h-[120px] border-zinc-700 bg-zinc-900/50 text-white placeholder:text-gray-500"
                     placeholder="Contanos sobre tu negocio y qué procesos te gustaría automatizar..."
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-secondary hover:bg-secondary/90 hover:text-primary text-black font-semibold py-3 animate-glow"
+                  className="bg-secondary hover:bg-secondary/90 hover:text-primary animate-glow w-full py-3 font-semibold text-black"
                 >
                   Enviar mensaje
                   <Send className="ml-2 size-4" />
@@ -122,7 +123,7 @@ export function ContactSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Información de contacto</h3>
+              <h3 className="mb-6 text-2xl font-bold text-white">Información de contacto</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.a
@@ -132,14 +133,14 @@ export function ContactSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center space-x-4 p-4 glass rounded-xl hover-lift group"
+                    className="glass hover-lift group flex items-center space-x-4 rounded-xl p-4"
                   >
-                    <div className="size-12 bg-primary rounded-xl flex items-center justify-center group-hover:bg-primary/80 transition-colors duration-300">
+                    <div className="bg-primary group-hover:bg-primary/80 flex size-12 items-center justify-center rounded-xl transition-colors duration-300">
                       <info.icon className="size-6 text-white" />
                     </div>
                     <div>
                       <div className="text-sm text-gray-400">{info.title}</div>
-                      <div className="text-white font-semibold">{info.value}</div>
+                      <div className="font-semibold text-white">{info.value}</div>
                     </div>
                   </motion.a>
                 ))}
@@ -147,25 +148,25 @@ export function ContactSection() {
             </div>
 
             {/* Quick response promise */}
-            <div className="glass rounded-xl p-6 border border-primary/20">
-              <h4 className="text-lg font-bold text-white mb-3">⚡ Respuesta rápida garantizada</h4>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Respondemos todos los mensajes en menos de 24 horas. Para consultas urgentes, escribinos directamente
-                por WhatsApp.
+            <div className="glass border-primary/20 rounded-xl border p-6">
+              <h4 className="mb-3 text-lg font-bold text-white">⚡ Respuesta rápida garantizada</h4>
+              <p className="text-sm leading-relaxed text-gray-300">
+                Respondemos todos los mensajes en menos de 24 horas. Para consultas urgentes,
+                escribinos directamente por WhatsApp.
               </p>
             </div>
 
             {/* Social proof */}
-            <div className="glass rounded-xl p-6 border border-secondary/20">
-              <h4 className="text-lg font-bold text-white mb-3">🎯 Consulta gratuita</h4>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                La primera consulta es completamente gratuita. Analizamos tu caso y te damos recomendaciones específicas
-                sin compromiso.
+            <div className="glass border-secondary/20 rounded-xl border p-6">
+              <h4 className="mb-3 text-lg font-bold text-white">🎯 Consulta gratuita</h4>
+              <p className="text-sm leading-relaxed text-gray-300">
+                La primera consulta es completamente gratuita. Analizamos tu caso y te damos
+                recomendaciones específicas sin compromiso.
               </p>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Check, Star } from "lucide-react"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Check, Star } from "lucide-react";
 
 export function PricingSection() {
   const plans = [
@@ -11,7 +11,12 @@ export function PricingSection() {
       price: "$25.000",
       period: "/mes",
       description: "Perfecto para empezar con automatización básica",
-      features: ["1 automatización incluida", "Soporte por email", "Configuración inicial", "Documentación completa"],
+      features: [
+        "1 automatización incluida",
+        "Soporte por email",
+        "Configuración inicial",
+        "Documentación completa",
+      ],
       popular: false,
     },
     {
@@ -42,34 +47,34 @@ export function PricingSection() {
       ],
       popular: false,
     },
-  ]
+  ];
 
   return (
-    <section id="precios" className="py-32 relative">
+    <section id="precios" className="relative py-32">
       {/* Background effect */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 size-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="bg-primary/5 absolute top-1/2 left-1/2 size-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <div className="relative z-10 container mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="mb-20 text-center"
         >
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="mb-6 text-4xl font-bold lg:text-5xl">
             Planes que se adaptan a tu <span className="text-primary">negocio</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-xl text-gray-300">
             Empezá con una automatización y escalá según tus necesidades
           </p>
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
           {plans.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -80,18 +85,20 @@ export function PricingSection() {
               className={`relative ${plan.popular ? "scale-105" : ""}`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center glow-purple">
-                    <Star className="size-4 mr-1" />
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
+                  <div className="bg-primary glow-purple flex items-center rounded-full px-4 py-1 text-sm font-semibold text-white">
+                    <Star className="mr-1 size-4" />
                     Más popular
                   </div>
                 </div>
               )}
 
-              <div className={`glass rounded-2xl p-8 h-full hover-lift ${plan.popular ? "border-primary/50" : ""}`}>
+              <div
+                className={`glass hover-lift h-full rounded-2xl p-8 ${plan.popular ? "border-primary/50" : ""}`}
+              >
                 {/* Header */}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                <div className="mb-8 text-center">
+                  <h3 className="mb-2 text-2xl font-bold text-white">{plan.name}</h3>
                   <div className="mb-4">
                     <span className="text-4xl font-bold text-white">{plan.price}</span>
                     <span className="text-gray-300">{plan.period}</span>
@@ -100,10 +107,10 @@ export function PricingSection() {
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-4 mb-8">
+                <ul className="mb-8 space-y-4">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <div className="size-5 bg-primary rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
+                      <div className="bg-primary mt-0.5 mr-3 flex size-5 flex-shrink-0 items-center justify-center rounded-full">
                         <Check className="size-3 text-white" />
                       </div>
                       <span className="text-gray-300">{feature}</span>
@@ -113,10 +120,10 @@ export function PricingSection() {
 
                 {/* CTA */}
                 <Button
-                  className={`w-full font-semibold py-3 ${
+                  className={`w-full py-3 font-semibold ${
                     plan.popular
-                      ? "bg-primary hover:bg-primary/90 hover:text-primary text-white animate-glow"
-                      : "bg-zinc-900 hover:bg-zinc-800 hover:text-primary text-white border border-zinc-700"
+                      ? "bg-primary hover:bg-primary/90 hover:text-primary animate-glow text-white"
+                      : "hover:text-primary border border-zinc-700 bg-zinc-900 text-white hover:bg-zinc-800"
                   }`}
                 >
                   {plan.name === "Enterprise" ? "Contactar" : "Empezar ahora"}
@@ -132,19 +139,20 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="mt-16 text-center"
         >
-          <p className="text-gray-400 mb-4">
-            <strong>Todos los planes incluyen:</strong> Configuración inicial y 30 días de soporte gratuito
+          <p className="mb-4 text-gray-400">
+            <strong>Todos los planes incluyen:</strong> Configuración inicial y 30 días de soporte
+            gratuito
           </p>
           <Button
             variant="outline"
-            className="border-zinc-700 text-white hover:bg-zinc-900 hover:text-primary bg-transparent"
+            className="hover:text-primary border-zinc-700 bg-transparent text-white hover:bg-zinc-900"
           >
             ¿No sabés qué plan elegir? Te ayudamos
           </Button>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

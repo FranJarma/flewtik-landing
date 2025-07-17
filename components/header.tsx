@@ -1,8 +1,8 @@
-"use client"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
+"use client";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 export function Header() {
   const navigation = [
@@ -11,27 +11,27 @@ export function Header() {
     { name: "Industrias", href: "#industrias" },
     { name: "Precios", href: "#precios" },
     { name: "Contacto", href: "#contacto" },
-  ]
+  ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="size-10 bg-primary rounded-xl flex items-center justify-center glow-purple">
-              <span className="text-white font-bold text-lg">A</span>
+            <div className="bg-primary glow-purple flex size-10 items-center justify-center rounded-xl">
+              <span className="text-lg font-bold text-white">A</span>
             </div>
-            <span className="text-2xl font-bold text-white">Automatika</span>
+            <span className="text-2xl font-bold text-white">Flewtik</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
+          <nav className="hidden items-center space-x-8 md:flex">
+            {navigation.map(item => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-primary transition-colors duration-200 font-medium"
+                className="hover:text-primary font-medium text-gray-300 transition-colors duration-200"
               >
                 {item.name}
               </Link>
@@ -39,8 +39,8 @@ export function Header() {
           </nav>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button className="bg-primary hover:bg-primary/90 hover:text-primary text-white font-semibold px-6 animate-glow">
+          <div className="hidden items-center space-x-4 md:flex">
+            <Button className="bg-primary hover:bg-primary/90 hover:text-primary animate-glow px-6 font-semibold text-white">
               Empezar ahora
             </Button>
           </div>
@@ -48,23 +48,23 @@ export function Header() {
           {/* Mobile Menu */}
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="sm" className="md:hidden text-white">
+              <Button variant="ghost" size="sm" className="text-white md:hidden">
                 <Menu className="size-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-zinc-900 border-zinc-800">
-              <div className="flex flex-col space-y-6 mt-8">
-                {navigation.map((item) => (
+            <SheetContent side="right" className="border-zinc-800 bg-zinc-900">
+              <div className="mt-8 flex flex-col space-y-6">
+                {navigation.map(item => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="text-gray-300 hover:text-primary transition-colors duration-200 py-2 font-medium"
+                    className="hover:text-primary py-2 font-medium text-gray-300 transition-colors duration-200"
                   >
                     {item.name}
                   </Link>
                 ))}
-                <div className="pt-4 border-t border-zinc-800">
-                  <Button className="w-full bg-primary hover:bg-primary/90 hover:text-primary text-white font-semibold">
+                <div className="border-t border-zinc-800 pt-4">
+                  <Button className="bg-primary hover:bg-primary/90 hover:text-primary w-full font-semibold text-white">
                     Empezar ahora
                   </Button>
                 </div>
@@ -74,5 +74,5 @@ export function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

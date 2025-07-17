@@ -1,60 +1,57 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Tektur } from "next/font/google"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Tektur } from "next/font/google";
+import "./globals.css";
 
 const tektur = Tektur({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-tektur",
-})
+});
 
 export const metadata: Metadata = {
-  title: "Automatika - Automatización para PYMEs | Salta, Argentina",
+  title: "Flewtik - Automatización para PYMEs | Salta, Argentina",
   description:
     "Automatizá tu negocio y escalá sin fricción. Ayudamos a PYMEs a resolver sus procesos con automatizaciones simples, seguras y escalables desde Salta Capital.",
-  keywords: "automatización, PYMEs, Salta, Argentina, CRM, WhatsApp, facturación, reportes, no-code",
-  authors: [{ name: "Automatika" }],
-  creator: "Automatika",
-  publisher: "Automatika",
+  keywords:
+    "automatización, PYMEs, Salta, Argentina, CRM, WhatsApp, facturación, reportes, no-code",
+  authors: [{ name: "Flewtik" }],
+  creator: "Flewtik",
+  publisher: "Flewtik",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "es_AR",
-    url: "https://automatika.com.ar",
-    siteName: "Automatika",
-    title: "Automatika - Automatización para PYMEs",
+    url: "https://flewtik.com",
+    siteName: "Flewtik",
+    title: "Flewtik - Automatización para PYMEs",
     description: "Automatizá tu negocio y escalá sin fricción con soluciones simples y escalables.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Automatika - Automatización para PYMEs",
+        alt: "Flewtik - Automatización para PYMEs",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Automatika - Automatización para PYMEs",
+    title: "Flewtik - Automatización para PYMEs",
     description: "Automatizá tu negocio y escalá sin fricción con soluciones simples y escalables.",
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://automatika.com.ar",
+    canonical: "https://flewtik.com",
     languages: {
-      "es-AR": "https://automatika.com.ar",
-      "en-US": "https://automatika.com.ar/en",
+      "es-AR": "https://flewtik.com",
+      "en-US": "https://flewtik.com/en",
     },
   },
-    generator: 'v0.dev'
-}
+  generator: "v0.dev",
+};
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={tektur.variable}>
       <head>
@@ -73,17 +70,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className={`${tektur.className} font-tektur`}>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-        {children}
-      </body>
+      <body className={`${tektur.className} font-tektur`}>{children}</body>
     </html>
-  )
+  );
 }

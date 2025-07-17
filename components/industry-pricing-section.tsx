@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import {
   Check,
   Star,
@@ -12,7 +12,7 @@ import {
   Building2,
   ShoppingBag,
   HelpCircle,
-} from "lucide-react"
+} from "lucide-react";
 
 export function IndustryPricingSection() {
   const industryPlans = [
@@ -23,7 +23,8 @@ export function IndustryPricingSection() {
       industry: "Restaurantes & Delivery",
       price: "$45.000",
       period: "/mes",
-      description: "Automatización completa para restaurantes con integración a plataformas de delivery",
+      description:
+        "Automatización completa para restaurantes con integración a plataformas de delivery",
       features: [
         "Integración con Fudo, PedidosYa, Rappi",
         "Control de inventario automático",
@@ -136,7 +137,7 @@ export function IndustryPricingSection() {
       color: "from-[#f59e0b] to-[#fbbf24]",
       popular: false,
     },
-  ]
+  ];
 
   const customPlan = {
     name: "Plan Personalizado",
@@ -149,36 +150,36 @@ export function IndustryPricingSection() {
       "Capacitación completa del equipo",
       "SLA garantizado",
     ],
-  }
+  };
 
   return (
-    <section id="planes" className="py-20 relative overflow-hidden">
+    <section id="planes" className="relative overflow-hidden py-20">
       {/* Background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-[#8b5cf6]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-[#06b6d4]/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/3 h-96 w-96 rounded-full bg-[#8b5cf6]/5 blur-3xl" />
+        <div className="absolute right-1/3 bottom-1/3 h-96 w-96 rounded-full bg-[#06b6d4]/5 blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
             <span className="bg-gradient-to-r from-[#8b5cf6] to-[#6366f1] bg-clip-text text-transparent">
               Planes por industria
             </span>
           </h2>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="mx-auto max-w-3xl text-xl text-slate-300">
             Automatizaciones preconfiguradas y optimizadas para cada tipo de negocio
           </p>
         </motion.div>
 
         {/* Industry Plans Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="mb-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {industryPlans.map((plan, index) => (
             <motion.div
               key={plan.id}
@@ -187,58 +188,60 @@ export function IndustryPricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative group ${plan.popular ? "scale-105" : ""}`}
+              className={`group relative ${plan.popular ? "scale-105" : ""}`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <div className="bg-gradient-to-r from-[#06b6d4] to-[#22d3ee] text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center">
-                    <Star className="w-4 h-4 mr-1" />
+                <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2 transform">
+                  <div className="flex items-center rounded-full bg-gradient-to-r from-[#06b6d4] to-[#22d3ee] px-4 py-1 text-sm font-semibold text-white">
+                    <Star className="mr-1 h-4 w-4" />
                     Más popular
                   </div>
                 </div>
               )}
 
               <div
-                className={`bg-slate-800/50 backdrop-blur-sm border-2 ${plan.popular ? "border-[#06b6d4]" : "border-slate-700/50"} rounded-2xl p-8 h-full hover:bg-slate-800/70 transition-all duration-300 group-hover:scale-[1.02]`}
+                className={`border-2 bg-slate-800/50 backdrop-blur-sm ${plan.popular ? "border-[#06b6d4]" : "border-slate-700/50"} h-full rounded-2xl p-8 transition-all duration-300 group-hover:scale-[1.02] hover:bg-slate-800/70`}
               >
                 {/* Header */}
-                <div className="text-center mb-8">
+                <div className="mb-8 text-center">
                   <div
-                    className={`w-16 h-16 bg-gradient-to-r ${plan.color} rounded-xl flex items-center justify-center mx-auto mb-4`}
+                    className={`h-16 w-16 bg-gradient-to-r ${plan.color} mx-auto mb-4 flex items-center justify-center rounded-xl`}
                   >
-                    <plan.icon className="w-8 h-8 text-white" />
+                    <plan.icon className="h-8 w-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                  <p className="text-sm text-slate-400 mb-4">{plan.industry}</p>
+                  <h3 className="mb-2 text-2xl font-bold text-white">{plan.name}</h3>
+                  <p className="mb-4 text-sm text-slate-400">{plan.industry}</p>
                   <div className="mb-4">
                     <span className="text-4xl font-bold text-white">{plan.price}</span>
                     <span className="text-slate-300">{plan.period}</span>
                   </div>
-                  <p className="text-slate-300 text-sm">{plan.description}</p>
+                  <p className="text-sm text-slate-300">{plan.description}</p>
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-3 mb-8">
+                <ul className="mb-8 space-y-3">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
                       <div
-                        className={`w-5 h-5 bg-gradient-to-r ${plan.color} rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0`}
+                        className={`h-5 w-5 bg-gradient-to-r ${plan.color} mt-0.5 mr-3 flex flex-shrink-0 items-center justify-center rounded-full`}
                       >
-                        <Check className="w-3 h-3 text-white" />
+                        <Check className="h-3 w-3 text-white" />
                       </div>
-                      <span className="text-slate-300 text-sm">{feature}</span>
+                      <span className="text-sm text-slate-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Integrations */}
                 <div className="mb-8">
-                  <h4 className="text-sm font-semibold text-slate-200 mb-3">INTEGRACIONES INCLUIDAS</h4>
+                  <h4 className="mb-3 text-sm font-semibold text-slate-200">
+                    INTEGRACIONES INCLUIDAS
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {plan.integrations.map((integration, intIndex) => (
                       <span
                         key={intIndex}
-                        className="px-3 py-1 bg-slate-700/50 text-slate-300 text-xs rounded-full border border-slate-600/50"
+                        className="rounded-full border border-slate-600/50 bg-slate-700/50 px-3 py-1 text-xs text-slate-300"
                       >
                         {integration}
                       </span>
@@ -252,7 +255,7 @@ export function IndustryPricingSection() {
                     plan.popular
                       ? "bg-gradient-to-r from-[#06b6d4] to-[#22d3ee] hover:from-[#0891b2] hover:to-[#0891b2]"
                       : `bg-gradient-to-r ${plan.color} hover:opacity-90`
-                  } text-white font-semibold py-3`}
+                  } py-3 font-semibold text-white`}
                 >
                   Elegir {plan.name}
                 </Button>
@@ -267,49 +270,50 @@ export function IndustryPricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="mx-auto max-w-4xl"
         >
-          <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8">
-            <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="rounded-2xl border border-slate-600/50 bg-gradient-to-r from-slate-800/50 to-slate-700/50 p-8 backdrop-blur-sm">
+            <div className="grid items-center gap-8 lg:grid-cols-2">
               <div>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] rounded-xl flex items-center justify-center mr-4">
-                    <HelpCircle className="w-6 h-6 text-white" />
+                <div className="mb-4 flex items-center">
+                  <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-[#6366f1] to-[#8b5cf6]">
+                    <HelpCircle className="h-6 w-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-white">{customPlan.name}</h3>
                     <p className="text-slate-400">Precio según requerimientos</p>
                   </div>
                 </div>
-                <p className="text-slate-300 mb-6">{customPlan.description}</p>
+                <p className="mb-6 text-slate-300">{customPlan.description}</p>
 
                 <ul className="space-y-3">
                   {customPlan.features.map((feature, index) => (
                     <li key={index} className="flex items-start">
-                      <div className="w-5 h-5 bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                        <Check className="w-3 h-3 text-white" />
+                      <div className="mt-0.5 mr-3 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#6366f1] to-[#8b5cf6]">
+                        <Check className="h-3 w-3 text-white" />
                       </div>
-                      <span className="text-slate-300 text-sm">{feature}</span>
+                      <span className="text-sm text-slate-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div className="text-center lg:text-left">
-                <div className="bg-gradient-to-r from-[#6366f1]/10 to-[#8b5cf6]/10 border border-[#6366f1]/20 rounded-xl p-6 mb-6">
-                  <h4 className="text-lg font-bold text-white mb-3">¿No sabés qué plan elegir?</h4>
-                  <p className="text-slate-300 text-sm mb-4">
-                    Analizamos tu negocio y te recomendamos la mejor solución. La consulta es completamente gratuita.
+                <div className="mb-6 rounded-xl border border-[#6366f1]/20 bg-gradient-to-r from-[#6366f1]/10 to-[#8b5cf6]/10 p-6">
+                  <h4 className="mb-3 text-lg font-bold text-white">¿No sabés qué plan elegir?</h4>
+                  <p className="mb-4 text-sm text-slate-300">
+                    Analizamos tu negocio y te recomendamos la mejor solución. La consulta es
+                    completamente gratuita.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <Button className="w-full bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] hover:from-[#4f46e5] hover:to-[#7c3aed] text-white font-semibold py-3">
+                  <Button className="w-full bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] py-3 font-semibold text-white hover:from-[#4f46e5] hover:to-[#7c3aed]">
                     Hacemos uno a tu medida
                   </Button>
                   <Button
                     variant="outline"
-                    className="w-full border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white bg-transparent"
+                    className="w-full border-slate-600 bg-transparent text-slate-300 hover:bg-slate-700 hover:text-white"
                   >
                     Consulta gratuita
                   </Button>
@@ -325,11 +329,11 @@ export function IndustryPricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="mt-12 text-center"
         >
-          <p className="text-slate-400 mb-4">
-            💡 <strong>Todos los planes incluyen:</strong> Configuración inicial, capacitación del equipo y 30 días de
-            soporte gratuito
+          <p className="mb-4 text-slate-400">
+            💡 <strong>Todos los planes incluyen:</strong> Configuración inicial, capacitación del
+            equipo y 30 días de soporte gratuito
           </p>
           <p className="text-sm text-slate-500">
             Los precios pueden variar según la complejidad y cantidad de integraciones requeridas
@@ -337,5 +341,5 @@ export function IndustryPricingSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
