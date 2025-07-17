@@ -1,28 +1,29 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: 0 0 0; /* Pure black */
-    --foreground: 255 255 255;
-    --card: 15 15 15; /* Very dark gray */
-    --card-foreground: 255 255 255;
-    --popover: 15 15 15;
-    --popover-foreground: 255 255 255;
-    --primary: 139 92 246; /* Purple */
-    --primary-foreground: 255 255 255;
-    --secondary: 34 197 94; /* Green */
-    --secondary-foreground: 0 0 0;
-    --muted: 38 38 38;
-    --muted-foreground: 163 163 163;
-    --accent: 139 92 246;
-    --accent-foreground: 255 255 255;
-    --destructive: 239 68 68;
-    --destructive-foreground: 255 255 255;
-    --border: 38 38 38;
-    --input: 38 38 38;
-    --ring: 139 92 246;
-    --radius: 0.75rem;
-  }
+@theme {
+  --color-flewtik-primary: #8b5cf6;
+  --color-flewtik-primary-50: #f7f3ff;
+  --color-flewtik-primary-100: #efe9fe;
+  --color-flewtik-primary-200: #e2d6fe;
+  --color-flewtik-primary-300: #cbb5fd;
+  --color-flewtik-primary-400: #ad8bfa;
+  --color-flewtik-primary-600: #713aed;
+  --color-flewtik-primary-700: #5e28d9;
+  --color-flewtik-primary-800: #4e21b6;
+  --color-flewtik-primary-900: #421d95;
+  --color-flewtik-primary-950: #2a1065;
+
+  --color-flewtik-secondary: #91d111;
+  --color-flewtik-secondary-50: #f9ffe6;
+  --color-flewtik-secondary-100: #f0fdca;
+  --color-flewtik-secondary-200: #e0fc9a;
+  --color-flewtik-secondary-300: #c7f65c;
+  --color-flewtik-secondary-400: #afeb30;
+  --color-flewtik-secondary-600: #70a709;
+  --color-flewtik-secondary-700: #547f0c;
+  --color-flewtik-secondary-800: #446410;
+  --color-flewtik-secondary-900: #3a5512;
+  --color-flewtik-secondary-950: #1d2f04;
 }
 
 @layer base {

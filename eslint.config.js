@@ -1,8 +1,8 @@
 import js from "@eslint/js";
-import tseslint from "typescript-eslint";
 import prettier from "eslint-plugin-prettier";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
 import sortDestructureKeys from "eslint-plugin-sort-destructure-keys";
+import tseslint from "typescript-eslint";
 import typescriptSortKeys from "eslint-plugin-typescript-sort-keys";
 
 export default [
@@ -16,8 +16,6 @@ export default [
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
-        project: true,
-        ecmaVersion: "latest",
         sourceType: "module",
       },
     },
