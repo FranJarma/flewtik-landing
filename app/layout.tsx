@@ -1,12 +1,12 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Tektur } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const tektur = Tektur({
+const openSans = Open_Sans({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-tektur",
+  variable: "--font-open-sans",
 });
 
 export const metadata: Metadata = {
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={tektur.variable}>
+    <html lang="es" className={openSans.variable}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#8B5CF6" />
         <script
@@ -70,7 +70,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }}
         />
       </head>
-      <body className={`${tektur.className} font-tektur`}>{children}</body>
+      <body className={`${openSans.className} font-open-sans`}>{children}</body>
     </html>
   );
 }

@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { MapPin, Mail, Linkedin, Instagram } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
+import Image from "next/image";
+import { SocialMedia } from "../ui/social-media";
 
 export function Footer() {
   const servicesList = [
@@ -19,29 +21,19 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="mb-4 flex items-center space-x-3">
-              <div className="bg-flewtik-primary glow-purple flex size-8 items-center justify-center rounded-lg">
-                <span className="text-sm font-bold text-white">A</span>
-              </div>
-              <span className="text-xl font-bold text-white">Flewtik</span>
+              <Image
+                alt="Flewtik logo"
+                className="rounded-2xl"
+                src="/isotype-filled.webp"
+                width={100}
+                height={100}
+              />
             </Link>
             <p className="mb-6 max-w-md text-gray-400">
               Automatizamos procesos para PYMEs argentinas con soluciones simples, seguras y
               escalables desde Salta Capital.
             </p>
-            <div className="flex space-x-4">
-              <Link
-                href="#"
-                className="hover:bg-flewtik-primary flex size-10 items-center justify-center rounded-lg bg-zinc-800 transition-colors duration-300"
-              >
-                <Linkedin className="size-5 text-gray-400 hover:text-white" />
-              </Link>
-              <Link
-                href="#"
-                className="hover:bg-flewtik-primary flex size-10 items-center justify-center rounded-lg bg-zinc-800 transition-colors duration-300"
-              >
-                <Instagram className="size-5 text-gray-400 hover:text-white" />
-              </Link>
-            </div>
+            <SocialMedia className="justify-start" />
           </div>
 
           {/* Services */}
@@ -84,12 +76,12 @@ export function Footer() {
           <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
             <div className="flex items-center space-x-6 text-sm text-gray-400">
               <div className="flex items-center">
-                <MapPin className="text-flewtik-secondary mr-1 size-4" />
+                <MapPin className="text-flewtik-primary mr-1 size-4" />
                 Salta Capital, Argentina
               </div>
               <div className="flex items-center">
                 <Mail className="text-flewtik-primary mr-1 size-4" />
-                hola@flewtik.com
+                comercial@flewtik.com
               </div>
             </div>
             <div className="text-sm text-gray-400">

@@ -1,57 +1,80 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChefHat, Stethoscope, Scissors, Calculator, Building2, ShoppingBag } from "lucide-react";
-import { Button } from "@/components/ui";
+import { ChefHat, Stethoscope, Scissors, Calculator, Building2, CarFront } from "lucide-react";
 
 export function IndustriesSection() {
   const industries = [
     {
       icon: ChefHat,
-      title: "Gastronomía",
-      description: "Automatizá pedidos, inventario y facturación",
-      features: ["Integración con delivery", "Control de stock", "Reportes de ventas"],
+      title: "Restaurantes y Cafeterías",
+      description: "Optimizá tus ventas, pedidos y control de insumos",
+      features: [
+        "Integración con Fudo, Bistrosoft, y apps de delivery",
+        "Reportes automáticos de ventas y stock",
+        "Control de combos, precios y promociones en tiempo real",
+      ],
       color: "primary",
     },
     {
       icon: Stethoscope,
-      title: "Consultorios",
-      description: "Gestión de turnos y obras sociales",
-      features: ["Turnos automáticos", "Recordatorios", "Facturación médica"],
+      title: "Consultorios y Clínicas",
+      description: "Digitalizá turnos, historias clínicas y facturación médica",
+      features: [
+        "Agenda online con recordatorios automáticos",
+        "Gestión de obras sociales y prepagas",
+        "Emisión automática de comprobantes AFIP",
+      ],
       color: "secondary",
     },
     {
       icon: Scissors,
-      title: "Salones de Belleza",
-      description: "Reservas y gestión de clientes",
-      features: ["Reservas online", "Marketing automático", "Gestión VIP"],
+      title: "Peluquerías y Estéticas",
+      description: "Reservas inteligentes y marketing automatizado",
+      features: [
+        "Turnos online personalizados",
+        "Seguimiento de clientes VIP",
+        "Campañas automáticas para fechas clave",
+      ],
       color: "primary",
-    },
-    {
-      icon: Calculator,
-      title: "Contabilidad",
-      description: "Automatización fiscal y contable",
-      features: ["Alertas AFIP", "Reportes automáticos", "Gestión de clientes"],
-      color: "secondary",
     },
     {
       icon: Building2,
       title: "Inmobiliarias",
-      description: "Gestión de propiedades y contratos",
-      features: ["Portal inquilinos", "Seguimiento pagos", "Contratos automáticos"],
+      description: "Simplificá la gestión de alquileres, contratos y cobros",
+      features: [
+        "Portal online para inquilinos y propietarios",
+        "Alertas de vencimientos y pagos automatizados",
+        "Generación de contratos digitales y recibos",
+      ],
       color: "primary",
     },
     {
-      icon: ShoppingBag,
-      title: "E-commerce",
-      description: "Ventas y atención automatizada",
-      features: ["Chatbot 24/7", "Gestión inventario", "Seguimiento envíos"],
+      icon: Calculator,
+      title: "Estudios Contables",
+      description: "Automatización de procesos fiscales y comunicación con clientes",
+      features: [
+        "Recordatorios de vencimientos AFIP por WhatsApp o Email",
+        "Carga automática de recibos y comprobantes",
+        "Dashboard personalizado para cada cliente",
+      ],
       color: "secondary",
+    },
+    {
+      icon: CarFront,
+      title: "Concesionarias de Autos y Motos",
+      description: "Seguimiento de prospectos, ventas y postventa sin esfuerzo",
+      features: [
+        "Gestión de clientes potenciales con alertas de seguimiento",
+        "Automatización de documentación y turnos para entrega",
+        "Campañas postventa y recordatorios de servicio",
+      ],
+      color: "primary",
     },
   ];
 
   return (
-    <section id="industrias" className="relative py-32">
+    <section id="industries" className="relative py-32">
       {/* Background effect */}
       <div className="absolute inset-0">
         <div className="bg-flewtik-primary/5 absolute top-1/2 left-1/2 size-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl" />
@@ -67,10 +90,12 @@ export function IndustriesSection() {
           className="mb-20 text-center"
         >
           <h2 className="mb-6 text-4xl font-bold lg:text-5xl">
-            Automatización por <span className="text-flewtik-secondary">industria</span>
+            Automatización por <span className="text-flewtik-primary">industria</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-xl text-gray-300">
-            Soluciones específicas para cada tipo de negocio
+          <p className="mx-auto w-full text-xl text-gray-300">
+            Soluciones específicas para cada tipo de negocio. ¿Tu industria no está listada? Ponte
+            en contacto con nosotros a través del formulario que está abajo, y juntos podemos crear
+            una solución personalizada para tu negocio.
           </p>
         </motion.div>
 
@@ -88,7 +113,7 @@ export function IndustriesSection() {
               <div className="glass hover-lift h-full rounded-2xl p-8">
                 {/* Icon */}
                 <div
-                  className={`size-16 ${industry.color === "primary" ? "bg-flewtik-primary" : "bg-flewtik-secondary"} mb-6 flex items-center justify-center rounded-2xl ${industry.color === "primary" ? "glow-purple" : "glow-green"}`}
+                  className={`size-16 ${industry.color === "primary" ? "bg-flewtik-primary" : "bg-flewtik-primary"} mb-6 flex items-center justify-center rounded-2xl ${industry.color === "primary" ? "glow-purple" : "glow-green"}`}
                 >
                   <industry.icon className="size-8 text-white" />
                 </div>
@@ -102,43 +127,16 @@ export function IndustriesSection() {
                   {industry.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-gray-300">
                       <div
-                        className={`size-2 ${industry.color === "primary" ? "bg-flewtik-primary" : "bg-flewtik-secondary"} mr-3 rounded-full`}
+                        className={`size-2 ${industry.color === "primary" ? "bg-flewtik-primary" : "bg-flewtik-primary"} mr-3 rounded-full`}
                       />
                       {feature}
                     </li>
                   ))}
                 </ul>
-
-                {/* CTA */}
-                <Button
-                  variant="outline"
-                  className="hover:text-flewtik-primary w-full border-zinc-700 bg-transparent text-white transition-all duration-300 hover:bg-zinc-900"
-                >
-                  Ver automatizaciones
-                </Button>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="glass mx-auto max-w-2xl rounded-2xl p-8">
-            <h3 className="mb-4 text-2xl font-bold text-white">¿Tu industria no está listada?</h3>
-            <p className="mb-6 text-gray-300">
-              Creamos automatizaciones personalizadas para cualquier tipo de negocio
-            </p>
-            <Button className="bg-flewtik-primary animate-glow px-8 font-semibold text-white">
-              Consultar automatización personalizada
-            </Button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

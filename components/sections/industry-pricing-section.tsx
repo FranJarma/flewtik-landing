@@ -153,7 +153,7 @@ export function IndustryPricingSection() {
   };
 
   return (
-    <section id="planes" className="relative overflow-hidden py-20">
+    <section id="industry-pricing" className="relative overflow-hidden py-20">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/3 h-96 w-96 rounded-full bg-[#8b5cf6]/5 blur-3xl" />

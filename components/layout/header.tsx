@@ -2,72 +2,78 @@
 import Link from "next/link";
 import { Button, Sheet, SheetContent, SheetTrigger } from "@/components/ui/";
 import { Menu } from "lucide-react";
+import Image from "next/image";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useEffect, useState } from "react";
+import { MobileNav } from "./mobile-nav";
 
 export function Header() {
+  const isMobile = useIsMobile();
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
   const navigation = [
-    { name: "Servicios", href: "#servicios" },
-    { name: "Cómo funciona", href: "#como-funciona" },
-    { name: "Industrias", href: "#industrias" },
-    { name: "Precios", href: "#precios" },
-    { name: "Contacto", href: "#contacto" },
+    { name: "Servicios", href: "#services" },
+    { name: "Cómo funciona", href: "#how-it-works" },
+    { name: "Industrias", href: "#industries" },
+    { name: "Contacto", href: "#contact" },
   ];
 
+  const logoWidth = isMobile ? 150 : 250;
+  const logoHeight = isMobile ? 150 : 250;
+
+  // Cerrar el diálogo cuando cambia de móvil a desktop
+  useEffect(() => {
+    if (!isMobile && isSheetOpen) {
+      setIsSheetOpen(false);
+    }
+  }, [isMobile, isSheetOpen]);
+
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-md">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+    <header className="bg-flewtik-primary-950 fixed top-0 z-50 w-full border-b border-white/10 backdrop-blur-md">
+      <div className="container mx-auto px-2 lg:px-8">
+        <div className="flex h-20 items-center justify-between md:justify-center">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="bg-flewtik-primary glow-purple flex size-10 items-center justify-center rounded-xl">
-              <span className="text-lg font-bold text-white">A</span>
-            </div>
-            <span className="text-2xl font-bold text-white">Flewtik</span>
+          <Link
+            href="/"
+            className="mx-auto ml-28 flex items-center justify-center md:mx-0 md:mr-auto"
+          >
+            <Image
+              alt="Flewtik logo"
+              className="block w-auto object-contain md:block md:h-auto"
+              src="/imagotype.webp"
+              width={logoWidth}
+              height={logoHeight}
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center space-x-8 lg:flex">
+          <nav className="hidden items-center justify-center space-x-8 lg:flex">
             {navigation.map(item => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="hover:text-flewtik-primary font-medium text-gray-300 transition-colors duration-200"
+                className="hover:text-flewtik-primary text-md font-medium text-gray-300 transition-colors duration-200"
               >
                 {item.name}
               </Link>
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden items-center space-x-4 lg:flex">
-            <Button className="bg-flewtik-primary hover:bg-flewtik-primary/90 animate-glow px-6 font-semibold text-white">
-              Empezar ahora
-            </Button>
-          </div>
-
           {/* Mobile Menu */}
-          <Sheet>
+          <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="sm" className="text-whites lg:hidden">
+              <Button variant="ghost" size="sm" className="text-white lg:hidden">
                 <Menu className="size-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="border-zinc-800 bg-zinc-900">
-              <div className="mt-8 flex flex-col space-y-6">
-                {navigation.map(item => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="hover:text-flewtik-primary py-2 font-medium text-gray-300 transition-colors duration-200"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="border-t border-zinc-800 pt-4">
-                  <Button className="bg-flewtik-primary hover:bg-flewtik-primary/90 w-full font-semibold text-white">
-                    Empezar ahora
-                  </Button>
-                </div>
-              </div>
+
+            {/* Asegurate que tu SheetContent tenga p-0 y botón X absoluto dentro */}
+            <SheetContent side="right" className="border-zinc-800 bg-zinc-900 p-0">
+              {/* Botón X ya lo tenés en SheetContent; no hace falta duplicar aquí */}
+              <MobileNav
+                navigation={navigation}
+                onNavigate={() => setIsSheetOpen(false)}
+                // activeHash={typeof window !== "undefined" ? window.location.hash : undefined}
+              />
             </SheetContent>
           </Sheet>
         </div>

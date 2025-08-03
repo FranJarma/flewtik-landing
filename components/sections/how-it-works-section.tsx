@@ -18,7 +18,7 @@ export function HowItWorksSection() {
     {
       icon: Zap,
       title: "Implementamos",
-      description: "Configuramos las automatizaciones usando herramientas no-code",
+      description: "Configuramos las automatizaciones en base a tus reglas de negocio",
     },
     {
       icon: BarChart,
@@ -28,7 +28,7 @@ export function HowItWorksSection() {
   ];
 
   return (
-    <section id="como-funciona" className="relative py-32">
+    <section id="how-it-works" className="relative py-32">
       <div className="container mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div

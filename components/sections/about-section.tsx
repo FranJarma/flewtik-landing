@@ -15,8 +15,7 @@ export function AboutSection() {
     {
       icon: Users,
       title: "Cercanía humana",
-      description:
-        "Somos un equipo local que entiende los desafíos específicos de las PYMEs argentinas.",
+      description: "Somos un equipo local que entiende los desafíos específicos de las PYMEs.",
     },
     {
       icon: Heart,
@@ -26,7 +25,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="nosotros" className="bg-[#2C2B2B]/30 py-20">
+    <section id="about-us" className="bg-[#2C2B2B]/30 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Content */}
@@ -37,8 +36,8 @@ export function AboutSection() {
             viewport={{ once: true }}
           >
             <div className="mb-6 flex items-center">
-              <MapPin className="text-flewtik-secondary mr-2 h-6 w-6" />
-              <span className="text-flewtik-secondary font-semibold">Salta Capital, Argentina</span>
+              <MapPin className="text-flewtik-primary mr-2 h-6 w-6" />
+              <span className="text-flewtik-primary font-semibold">Salta Capital, Argentina</span>
             </div>
 
             <h2 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
@@ -48,9 +47,9 @@ export function AboutSection() {
             </h2>
 
             <p className="mb-8 text-xl leading-relaxed text-[#D2D2D2]">
-              <strong className="text-flewtik-secondary">Flewtik</strong> nace en Salta para
-              resolver procesos reales con herramientas accesibles. Somos especialistas en
-              automatización que entendemos las necesidades específicas de las PYMEs argentinas.
+              <strong className="text-flewtik-primary">Flewtik</strong> nace en Salta para resolver
+              procesos reales con herramientas accesibles. Somos especialistas en automatización que
+              entendemos las necesidades específicas de las PYMEs.
             </p>
 
             <p className="mb-8 leading-relaxed text-[#D2D2D2]">
@@ -114,7 +113,7 @@ export function AboutSection() {
               {/* Floating stats */}
               <div className="absolute -top-6 -right-6 rounded-xl border border-[#404040]/50 bg-[#2C2B2B]/90 p-4 backdrop-blur-sm">
                 <div className="text-center">
-                  <div className="text-flewtik-secondary text-2xl font-bold">50+</div>
+                  <div className="text-flewtik-primary text-2xl font-bold">50+</div>
                   <div className="text-xs text-[#D2D2D2]">Proyectos</div>
                 </div>
               </div>

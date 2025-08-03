@@ -35,7 +35,7 @@ export function StatsSection() {
     <section className="relative py-32">
       {/* Background effects */}
       <div className="absolute inset-0">
-        <div className="bg-flewtik-secondary/5 absolute top-1/4 left-1/4 size-96 rounded-full blur-3xl" />
+        <div className="bg-flewtik-primary/5 absolute top-1/4 left-1/4 size-96 rounded-full blur-3xl" />
         <div className="bg-flewtik-primary/5 absolute right-1/4 bottom-1/4 size-96 rounded-full blur-3xl" />
       </div>
 

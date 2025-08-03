@@ -9,8 +9,8 @@ export function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "hola@flewtik.com",
-      link: `mailto:hola@flewtik.com`,
+      value: "comercial@flewtik.com",
+      link: `mailto:comercial@flewtik.com`,
     },
     {
       icon: Phone,
@@ -27,7 +27,7 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="contacto" className="relative py-32">
+    <section id="contact" className="relative py-32">
       <div className="container mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export function ContactSection() {
           className="mb-20 text-center"
         >
           <h2 className="mb-6 text-4xl font-bold lg:text-5xl">
-            Hablemos de tu <span className="text-flewtik-secondary">proyecto</span>
+            Hablemos de tu <span className="text-flewtik-primary">proyecto</span>
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-gray-300">
             Contanos sobre tu negocio y te ayudamos a identificar las mejores oportunidades de
@@ -155,7 +155,7 @@ export function ContactSection() {
             </div>
 
             {/* Social proof */}
-            <div className="glass border-flewtik-secondary/20 rounded-xl border p-6">
+            <div className="glass border-flewtik-primary/20 rounded-xl border p-6">
               <h4 className="mb-3 text-lg font-bold text-white">🎯 Consulta gratuita</h4>
               <p className="text-sm leading-relaxed text-gray-300">
                 La primera consulta es completamente gratuita. Analizamos tu caso y te damos

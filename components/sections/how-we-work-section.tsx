@@ -16,13 +16,13 @@ export function HowWeWorkSection() {
       icon: Workflow,
       title: "Diseño del flujo",
       description: "Creamos el mapa de automatización personalizado para tu negocio.",
-      color: "from-[#A477EB] to-flewtik-secondary",
+      color: "from-[#A477EB] to-flewtik-primary",
     },
     {
       icon: Code,
       title: "Implementación no-code",
       description: "Desarrollamos la solución usando herramientas modernas y accesibles.",
-      color: "from-flewtik-secondary to-[#1CAF4E]",
+      color: "from-flewtik-primary to-[#1CAF4E]",
     },
     {
       icon: BarChart,
@@ -33,7 +33,7 @@ export function HowWeWorkSection() {
   ];
 
   return (
-    <section id="como-trabajamos" className="bg-[#2C2B2B]/30 py-20">
+    <section id="how-we-work" className="bg-[#2C2B2B]/30 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

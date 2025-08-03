@@ -29,7 +29,7 @@ export function ServicesSection() {
         "Reportes fiscales",
         "Conciliación bancaria",
       ],
-      color: "from-[#A477EB] to-flewtik-secondary",
+      color: "from-[#A477EB] to-flewtik-primary",
     },
     {
       icon: FileText,
@@ -42,7 +42,7 @@ export function ServicesSection() {
         "Google Sheets",
         "KPIs personalizados",
       ],
-      color: "from-flewtik-secondary to-[#1CAF4E]",
+      color: "from-flewtik-primary to-[#1CAF4E]",
     },
     {
       icon: Headphones,
@@ -59,7 +59,7 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="servicios" className="py-20">
+    <section id="services" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export function ServicesSection() {
           className="mb-16 text-center"
         >
           <h2 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
-            <span className="from-flewtik-secondary bg-gradient-to-r to-[#1CAF4E] bg-clip-text text-transparent">
+            <span className="from-flewtik-primary bg-gradient-to-r to-[#1CAF4E] bg-clip-text text-transparent">
               Nuestros servicios
             </span>
           </h2>
@@ -104,7 +104,7 @@ export function ServicesSection() {
                 <ul className="mb-6 space-y-2">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center text-[#D2D2D2]">
-                      <div className="from-flewtik-secondary mr-3 h-2 w-2 rounded-full bg-gradient-to-r to-[#1CAF4E]" />
+                      <div className="from-flewtik-primary mr-3 h-2 w-2 rounded-full bg-gradient-to-r to-[#1CAF4E]" />
                       {feature}
                     </li>
                   ))}

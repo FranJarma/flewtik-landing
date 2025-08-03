@@ -4,7 +4,6 @@ import {
   HeroSection,
   HowItWorksSection,
   IndustriesSection,
-  PricingSection,
   StatsSection,
   TestimonialsSection,
 } from "@/components/sections";
@@ -12,7 +11,7 @@ import { WhatsAppButton } from "@/components/ui";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="bg-flewtik-primary-950 min-h-screen text-white">
       <Header />
       <main>
         <HeroSection />
@@ -20,7 +19,7 @@ export default function HomePage() {
         <IndustriesSection />
         <StatsSection />
         <TestimonialsSection />
-        <PricingSection />
+        {/* <PricingSection /> // TODO: When pricing is ready */}
         <ContactSection />
       </main>
       <Footer />

@@ -44,7 +44,7 @@ export function TestimonialsSection() {
           className="mb-20 text-center"
         >
           <h2 className="mb-6 text-4xl font-bold lg:text-5xl">
-            Lo que dicen nuestros <span className="text-flewtik-secondary">clientes</span>
+            Lo que dicen nuestros <span className="text-flewtik-primary">clientes</span>
           </h2>
           <p className="mx-auto max-w-2xl text-xl text-gray-300">
             Testimonios reales de empresas que ya automatizaron sus procesos

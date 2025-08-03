@@ -1,35 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --color-flewtik-primary: #8b5cf6;
-  --color-flewtik-primary-50: #f7f3ff;
-  --color-flewtik-primary-100: #efe9fe;
-  --color-flewtik-primary-200: #e2d6fe;
-  --color-flewtik-primary-300: #cbb5fd;
-  --color-flewtik-primary-400: #ad8bfa;
-  --color-flewtik-primary-600: #713aed;
-  --color-flewtik-primary-700: #5e28d9;
-  --color-flewtik-primary-800: #4e21b6;
-  --color-flewtik-primary-900: #421d95;
-  --color-flewtik-primary-950: #2a1065;
+  /* PRIMARY – Deep Electric Violet (#4800ff) */
+  --color-flewtik-primary: #4800ff;
+  --color-flewtik-primary-50: #edf0ff;
+  --color-flewtik-primary-100: #dce3ff;
+  --color-flewtik-primary-200: #bbc8ff;
+  --color-flewtik-primary-300: #96a7ff;
+  --color-flewtik-primary-400: #7683ff;
+  --color-flewtik-primary-500: #5c5cff;
+  --color-flewtik-primary-600: #5040f0;
+  --color-flewtik-primary-700: #4836d6;
+  --color-flewtik-primary-800: #3a2cb3;
+  --color-flewtik-primary-900: #2f2494;
+  --color-flewtik-primary-950: #000017;
 
-  --color-flewtik-secondary: #91d111;
-  --color-flewtik-secondary-50: #f9ffe6;
-  --color-flewtik-secondary-100: #f0fdca;
-  --color-flewtik-secondary-200: #e0fc9a;
-  --color-flewtik-secondary-300: #c7f65c;
-  --color-flewtik-secondary-400: #afeb30;
-  --color-flewtik-secondary-600: #70a709;
-  --color-flewtik-secondary-700: #547f0c;
-  --color-flewtik-secondary-800: #446410;
-  --color-flewtik-secondary-900: #3a5512;
-  --color-flewtik-secondary-950: #1d2f04;
+  /* SECONDARY – French Violet (#9514cc) */
+  --color-flewtik-secondary: #9514cc;
+  --color-flewtik-secondary-50: #f9ebfe;
+  --color-flewtik-secondary-100: #f2d6fd;
+  --color-flewtik-secondary-200: #e4affb;
+  --color-flewtik-secondary-300: #ce7df6;
+  --color-flewtik-secondary-400: #b44ae9;
+  --color-flewtik-secondary-500: #9514cc;
+  --color-flewtik-secondary-600: #7c0db1;
+  --color-flewtik-secondary-700: #640992;
+  --color-flewtik-secondary-800: #4f0c70;
+  --color-flewtik-secondary-900: #3f0b59;
+  --color-flewtik-secondary-950: #230032;
 }
 
 @layer base {
+  :root {
+    --primary: var(--color-flewtik-primary);
+    --primary-foreground: 255 255 255;
+    --secondary: var(--color-flewtik-secondary);
+    --secondary-foreground: 255 255 255;
+  }
+
   body {
-    @apply bg-black text-white;
+    @apply bg-flewtik-primary-950 text-white;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
   }
 }
 
@@ -43,12 +55,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #8b5cf6;
-  border-radius: 3px;
+  background: #4800ff; /* PRIMARY */
+  border-radius: 1px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a78bfa;
+  background: #4800d6; /* PRIMARY-700 */
 }
 
 /* Smooth scrolling */
@@ -57,12 +69,12 @@ html {
 }
 
 /* Glow effects */
-.glow-purple {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+.glow-primary {
+  box-shadow: 0 0 20px rgba(72, 0, 255, 0.3); /* PRIMARY */
 }
 
-.glow-green {
-  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(149, 20, 204, 0.3); /* SECONDARY */
 }
 
 /* Glassmorphism */
@@ -88,10 +100,10 @@ html {
 @keyframes button-glow {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 20px rgba(72, 0, 255, 0.4); /* PRIMARY */
   }
   50% {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+    box-shadow: 0 0 30px rgba(72, 0, 255, 0.6);
   }
 }
 

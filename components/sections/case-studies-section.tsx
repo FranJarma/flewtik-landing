@@ -29,7 +29,7 @@ export function CaseStudiesSection() {
         { icon: DollarSign, value: "$50K", label: "Ahorro anual" },
         { icon: TrendingUp, value: "95%", label: "Precisión en datos" },
       ],
-      color: "from-flewtik-secondary to-[#1CAF4E]",
+      color: "from-flewtik-primary to-[#1CAF4E]",
     },
     {
       company: "E-commerce Local",
@@ -47,7 +47,7 @@ export function CaseStudiesSection() {
   ];
 
   return (
-    <section id="casos" className="bg-[#2C2B2B]/30 py-20">
+    <section id="case-studies" className="bg-[#2C2B2B]/30 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export function CaseStudiesSection() {
           className="mb-16 text-center"
         >
           <h2 className="mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
-            <span className="to-flewtik-secondary bg-gradient-to-r from-[#1CAF4E] bg-clip-text text-transparent">
+            <span className="to-flewtik-primary bg-gradient-to-r from-[#1CAF4E] bg-clip-text text-transparent">
               Casos de éxito
             </span>
           </h2>
@@ -96,7 +96,7 @@ export function CaseStudiesSection() {
                     <p className="text-sm text-[#D2D2D2]">{caseStudy.challenge}</p>
                   </div>
                   <div>
-                    <h4 className="text-flewtik-secondary mb-2 text-sm font-semibold">SOLUCIÓN</h4>
+                    <h4 className="text-flewtik-primary mb-2 text-sm font-semibold">SOLUCIÓN</h4>
                     <p className="text-sm text-[#D2D2D2]">{caseStudy.solution}</p>
                   </div>
                 </div>

@@ -50,7 +50,7 @@ export function PricingSection() {
   ];
 
   return (
-    <section id="precios" className="relative py-32">
+    <section id="pricing" className="relative py-32">
       {/* Background effect */}
       <div className="absolute inset-0">
         <div className="bg-flewtik-primary/5 absolute top-1/2 left-1/2 size-96 -translate-x-1/2 -translate-y-1/2 transform rounded-full blur-3xl" />

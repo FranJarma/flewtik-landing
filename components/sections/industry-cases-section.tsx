@@ -111,7 +111,7 @@ export function IndustryCasesSection() {
   ];
 
   return (
-    <section id="casos" className="relative overflow-hidden py-20">
+    <section id="industry-cases" className="relative overflow-hidden py-20">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-[#6366f1]/5 blur-3xl" />
